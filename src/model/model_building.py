@@ -77,7 +77,7 @@ def main():
     try:
         params = load_params('params.yaml')['model_building']
 
-        train_data = load_data('./data/processed/train_bow.csv')
+        train_data = load_data('./data/processed/train_tfidf.csv')
         X_train = train_data.iloc[:, :-1].values
         y_train = train_data.iloc[:, -1].values
 
