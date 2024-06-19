@@ -25,19 +25,19 @@ stages:
     outs:
     - data/processed
   model_building:
-    cmd: python src/models/model_building.py
+    cmd: python src/model/model_building.py
     deps:
     - data/processed
-    - src/models/model_building.py
+    - src/model/model_building.py
     params:
     - model_building.n_estimators
     - model_building.learning_rate
     outs:
     - models/model.pkl
   model_evaluation:
-    cmd: python src/models/model_evaluation.py
+    cmd: python src/model/model_evaluation.py
     deps:
     - models/model.pkl
-    - src/models/model_evaluation.py
+    - src/model/model_evaluation.py
     metrics:
     - reports/metrics.json
